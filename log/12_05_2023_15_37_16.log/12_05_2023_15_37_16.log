@@ -1,0 +1,2 @@
+[2023-12-05 15:37:16,992] - root - INFO - WELCOME TO THE FIRST LOG
+[2023-12-05 15:37:16,992] - root - INFO - Exception unsupported operand type(s) for /: 'int' and 'str' Occured
