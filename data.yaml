@@ -1,0 +1,6 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 11
+names: ['eyelevel', 'lefteye', 'righteye', 'left_undereye', 'right_undereye', 'sagging_cheeks', 'upper_lip', 'lower_lip', 'left_corner_bilat', 'right_corner_bilat', 'vertical_eyebrow_lines']

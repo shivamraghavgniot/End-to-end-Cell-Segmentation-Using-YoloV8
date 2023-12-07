@@ -17,11 +17,11 @@ class ClientApp:
 
 
 
-@app.route("/train")
-def trainRoute():
-    obj = TrainPipeline()
-    obj.run_pipeline()
-    return "Training Successfull!!" 
+# @app.route("/train")
+# def trainRoute():
+#     obj = TrainPipeline()
+#     obj.run_pipeline()
+#     return "Training Successfull!!" 
 
 
 @app.route("/")
@@ -38,7 +38,7 @@ def predictRoute():
         image = request.json['image']
         decodeImage(image, clApp.filename)
 
-        os.system("yolo task=detect mode=predict model=artifacts/model_trainer/best.pt conf=0.25 source=data/inputImage.jpg save=true")
+        os.system("yolo task=detect mode=predict model=artifacts/model_trainer/best.pt conf=0.25 source=data/inputImage.jpg save=true save_txt=True")
         opencodedbase64 = encodeImageIntoBase64("runs/detect/predict/inputImage.jpg")
         result = {"image": opencodedbase64.decode('utf-8')}
         os.system("rm -rf runs")
